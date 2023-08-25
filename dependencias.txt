@@ -1,0 +1,14 @@
+#LENGUAJE
+Utilizaremos Python 3.11 como Lenguaje de Programación
+https://www.python.org/
+
+#BASE DE DATOS
+Utilizaremos MongoDB 7.0 (ultima versión)
+https://www.mongodb.com/es
+
+#LIBRERÍA
+Utilizaremos ReactPy (su única versión) importada desde su repositorio original.
+https://reactpy.dev/docs/index.html
+
+#OTROS
+Utilizaremos conocimiento de HTML para trabajar con ReactPy y CSS para los estilos.

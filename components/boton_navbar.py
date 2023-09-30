@@ -15,8 +15,9 @@ def boton_navbar(boton, direccion):
                     "padding":"1rem",
                     "list-style": "none"
                 }
-            },{boton})
-            ) 
+            },{boton}),
+        
+        ) 
 
 app = FastAPI()
 configure(app, boton_navbar)

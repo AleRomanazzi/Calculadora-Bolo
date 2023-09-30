@@ -1,7 +1,7 @@
 from reactpy import component, html
 from reactpy.backend.fastapi import configure
 from fastapi import FastAPI
-
+ 
 from components.imagen import imagen
 from components.boton import boton
 

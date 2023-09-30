@@ -8,21 +8,15 @@ from mongoPython.conection import db, lacteos
 
 @component
 def select():
+    categories = ["Lácteos", "Azucarados", "Carnes", "Cereales",
+                  "Frutas", "Grasas", "Huevo", "Misceláneos", "Pescados", "Vegetales"]
+    list_categories = [html.option(text) for text in categories]
     return html.div(
         html.select(
             {
                 "name": "select1"
             },
-            html.option("Lácteos"),
-            html.option("Azucarados"),
-            html.option("Carnes"),
-            html.option("Cereales"),
-            html.option("Frutas"),
-            html.option("Grasas"),
-            html.option("Huevo"),
-            html.option("Misceláneos"),
-            html.option("Pescados"),
-            html.option("Vegetales")
+            list_categories
         ),
         html.select(
             html.option(i["Nombre"]) for i in lacteos.find({"Alimento": "Lácteos"}))

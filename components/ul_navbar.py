@@ -15,7 +15,7 @@ def ul_navbar():
             }
         },
         boton_navbar('Inicio', "https://google.com"),
-        boton_navbar('Calcular', "https://google.com"),
+        boton_navbar('Calcular', "./pantalla_input/input.py"),
         boton_navbar('Creditos', "https://google.com")
     )
 

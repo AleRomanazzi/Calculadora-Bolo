@@ -6,8 +6,6 @@
 # ? test> use <nombredebd>
 # ? test> show collections (muestra las colecciones)
 
-
-
 from pymongo import MongoClient
 
 MONGO_URI = 'mongodb://localhost'

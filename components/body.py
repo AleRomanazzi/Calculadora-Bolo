@@ -7,6 +7,7 @@ from components.imagen import imagen
 from components.boton import boton
 from components.input import input
 from components.select import select
+from components.footer import footer
 
 @component
 def body():
@@ -17,6 +18,7 @@ def body():
         input("number","300px"),
         input("number","300px"),
         select(),
+        boton("Calcular")
         )
 
 

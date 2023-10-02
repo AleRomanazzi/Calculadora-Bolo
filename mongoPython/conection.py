@@ -11,7 +11,7 @@ cereales = db['Cereales']
 frutas = db['Frutas']
 grasas = db['Grasas']
 Huevo = db['Huevo']
-miscelaneas = db['Misceláneas']
+miscelaneas = db['Misceláneos']
 pescados = db['Pescados']
 vegetales = db['Vegetales']
 

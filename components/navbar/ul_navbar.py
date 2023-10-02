@@ -2,7 +2,7 @@ from reactpy import component, html
 from reactpy.backend.fastapi import configure
 from fastapi import FastAPI
 
-from components.boton_navbar import boton_navbar
+from components.navbar.boton_navbar import boton_navbar
 
 @component
 def ul_navbar():

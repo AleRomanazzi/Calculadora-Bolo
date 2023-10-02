@@ -1,3 +1,0 @@
-URI mongo cluster :
-
-mongodb+srv://facumaidana2001:dCv2uX6kWMtHMnJb@cluster0.pv3bwll.mongodb.net/ 

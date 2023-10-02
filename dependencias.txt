@@ -12,3 +12,6 @@ https://reactpy.dev/docs/index.html
 
 #OTROS
 Utilizaremos conocimiento de HTML para trabajar con ReactPy y CSS para los estilos.
+
+#URI mongo cluster :
+mongodb+srv://facumaidana2001:dCv2uX6kWMtHMnJb@cluster0.pv3bwll.mongodb.net/ 

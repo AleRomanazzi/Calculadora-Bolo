@@ -3,8 +3,8 @@ from reactpy.backend.fastapi import configure
 from fastapi import FastAPI
 
 from components.body import body
-from components.navbar import navbar
-from components.footer import footer
+from components.navbar.navbar import navbar
+from components.footer.footer import footer
 
 #Componente principal que renderiza el resto
 @component

@@ -4,7 +4,7 @@ from fastapi import FastAPI
 
 
 @component
-def boton(texto):
+def boton(texto, calcular):
     return html.input({
         "type": "submit",
         "value": texto,
@@ -16,7 +16,8 @@ def boton(texto):
             "border-radius": "10%",
             "border": "1px solid white",
             "background-image": "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)"
-        }
+        },
+        "on_click": calcular
     },
     )
 

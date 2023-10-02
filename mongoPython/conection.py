@@ -15,15 +15,6 @@ miscelaneas = db['Misceláneos']
 pescados = db['Pescados']
 vegetales = db['Vegetales']
 
-# results = lacteos.find({"Carbohidratos totales (g)": "6.2"})
-# print(results[0])
-
-
-# def buscar():
-#     for i in lacteos.find({"Alimentos": "Lácteos"}):
-#         print(i)
-
-# for i in lacteos.find({"Alimento": "Lácteos"}):
-#     print(i["Nombre"])
-
-# buscar()-
+# carbohidratos = db[categoria].find_one(
+#     {"Nombre": "Durazno, pulpa, fresco, crudo"})
+# print(carbohidratos['Carbohidratos totales'])

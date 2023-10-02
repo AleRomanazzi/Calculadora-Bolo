@@ -7,18 +7,19 @@ from fastapi import FastAPI
 def boton_navbar(boton, direccion):
     return html.a({"href": direccion,
                    "target": "blank",
-                   "style":{
-                    "text-decoration": "none",
-                    "color": "white" 
-              }},
-        html.li({
-                "style":{
-                    "padding":"1rem",
-                    "list-style": "none"
-                }
-            },{boton}),
-        
-        ) 
+                   "style": {
+                       "text-decoration": "underscored",
+                       "color": "white"
+                   }},
+                  html.li({
+                      "style": {
+                          "padding": "1rem",
+                          "list-style": "none"
+                      }
+                  }, {boton}),
+
+                  )
+
 
 app = FastAPI()
 configure(app, boton_navbar)

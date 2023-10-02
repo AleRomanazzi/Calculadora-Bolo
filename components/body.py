@@ -10,11 +10,14 @@ from components.select import select
 from components.footer import footer
 from components.food_select_container import foodSelector
 from components.label import label
+from mongoPython.conection import db
+
 
 @component
 def body():
     formstate, set_formstate = use_state(dict())
     # *crear la funcion calcular, usando el estado formstate
+    # print(formstate)
 
     def addFormState(name, value):
         prev_dict = formstate.copy()
@@ -23,19 +26,29 @@ def body():
         prev_dict.update(new_dict)
         set_formstate(prev_dict)
 
-    print(formstate)
+    calculus, setCalculus = use_state(0)
 
-    #Implementar lista y ciclo for para generar labels e inputs para mejora de codigo
+    def calculate(e):
+        glucosa = int(formstate['glucosa'])
+        ratio = int(formstate['ratio'])
+        factor = int(formstate['factor'])
+        porciones = int(formstate['porciones'])
+        nombre_alimento = formstate['alimentos']
+        categoria = formstate['categoria']
+        carb = db[categoria].find_one({"Nombre": nombre_alimento})
+        carb = float(carb['Carbohidratos totales'])
+        setCalculus(glucosa+ratio)
+
+    # Implementar lista y ciclo for para generar labels e inputs para mejora de codigo
     lista = ["glucosa", "ratio", "factor", "porciones"]
     return html.div({
-        "style":{
-            "background-color": "#0093E9",
-            "background-image": "linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)"
-            },
-            },
-        html.form(
-            {"method": "POST", 
-             "name": "sopa",
+        "style": {
+            "background-color": "#B5BAD0",
+            "font-family": "consolas",
+        },
+    },
+        html.div(
+            {"name": "sopa",
              "style": {
                  "display": "flex",
                  "flex-direction": "column",
@@ -43,18 +56,19 @@ def body():
                  "align-items": "center",
              },
              },
-                  label("Nivel de glucosa:"),                
-                  input("number", addFormState, "glucosa"),
-                  label("Ratio:"),
-                  input("number", addFormState, "ratio"),
-                  label("Factor:"),
-                  input("number", addFormState, "factor"),
-                  label("Cantidad de Porciones:"),
-                  input("number", addFormState, "porciones"),
-                  label("Categoria y Alimento:"),
-                  foodSelector(addFormState),
-                  boton("Calcular")
-                  )
+        label("Nivel de glucosa:"),
+        input("number", addFormState, "glucosa"),
+        label("Ratio:"),
+        input("number", addFormState, "ratio"),
+        label("Factor:"),
+        input("number", addFormState, "factor"),
+        label("Cantidad de Porciones:"),
+        input("number", addFormState, "porciones"),
+        label("Categoría y Alimento:"),
+        foodSelector(addFormState),
+        boton("Calcular", calculate),
+        html.span(f"Te tienes que suministrar:{calculus} unidades")
+    )
     )
 
 

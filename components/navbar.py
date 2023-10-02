@@ -15,7 +15,7 @@ def navbar():
             "align-items": "center"                
     }
     },
-        html.h1("Bolo Calculator"),
+        html.h1("CALCULADORA DE BOLO"),
         ul_navbar()
 )
 

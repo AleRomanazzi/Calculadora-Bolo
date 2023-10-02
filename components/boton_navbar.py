@@ -6,6 +6,7 @@ from fastapi import FastAPI
 @component
 def boton_navbar(boton, direccion):
     return html.a({"href": direccion,
+                   "target": "blank",
                    "style":{
                     "text-decoration": "none",
                     "color": "white" 

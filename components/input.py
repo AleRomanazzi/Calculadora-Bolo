@@ -5,7 +5,7 @@ from fastapi import FastAPI
 
 # Componente principal que renderiza el resto
 @component
-def input(tipoInput, ancho, cambiar, name):
+def input(tipoInput, cambiar, name):
     def handleChange(e):
         cambiar(name, e["currentTarget"]['value'])
         print(e["currentTarget"]['value'])
@@ -14,12 +14,12 @@ def input(tipoInput, ancho, cambiar, name):
         "type": tipoInput,
         "name": name,
         "style": {
-            "width": ancho,
-            "height": "50px",
+            "width": "200px",
+            "height": "30px",
             "border": "1px solid black",
             "border-radius": "2px",
             "font-size": "32px"
-        }
+        },
     })
 
 

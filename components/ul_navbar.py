@@ -14,9 +14,9 @@ def ul_navbar():
                 "justify-content": "center"
             }
         },
-        boton_navbar('Inicio', "https://google.com"),
-        boton_navbar('Calcular', "./pantalla_input/input.py"),
-        boton_navbar('Creditos', "https://google.com")
+        boton_navbar('CALCULAR', "./pantalla_input/input.py"),
+        boton_navbar('Facundo', "https://www.linkedin.com/in/facundo-maidana-68a7b71b4/"),
+        boton_navbar('Alejandro', "https://www.linkedin.com/in/alejandro-romanazzi/")
     )
 
 app = FastAPI()

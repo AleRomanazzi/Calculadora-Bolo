@@ -12,7 +12,17 @@ def foodSelector(change):
         new_index = value
         setFoodlist([i["Nombre"]
                     for i in db[new_index].find({"Alimento": new_index})])
-    return html.div(
-        select([{"value": label, "label": label} for index, label in enumerate(['Lácteos', 'Azucarados', 'Carnes', 'Cereales', 'Frutas', 'Grasas', 'Huevo', 'Misceláneos', 'Pescados', 'Vegetales'])],
+    return html.div({
+        "style":{
+            "display": "flex",
+            "flex-direction":"column",
+            "justify-content":"center",
+            "align-items":"center",
+            "padding": "1rem",
+        },
+        },
+        select(
+            [{"value": label, "label": label} for index, label in enumerate(['Lácteos', 'Azucarados', 'Carnes', 'Cereales', 'Frutas', 'Grasas', 'Huevo', 'Misceláneos', 'Pescados', 'Vegetales'])],
                handleCategoryChange, "categories"),
-        select([{"value": label, "label": label} for index, label in enumerate(foodlist)], change, "alimentos"))
+        select(
+            [{"value": label, "label": label} for index, label in enumerate(foodlist)], change, "alimentos"))

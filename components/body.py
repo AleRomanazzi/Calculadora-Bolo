@@ -21,7 +21,7 @@ def body():
         prev_dict.update(new_dict)
         set_formstate(prev_dict)
 
-    calculus, setCalculus = use_state(0)
+    calculus, setCalculus = use_state("")
 
     def calculate(e):
         glucosa = int(formstate['glucosa'])
@@ -33,42 +33,38 @@ def body():
         carb = db[categoria].find_one({"Nombre": nombre_alimento})
         carb = float(carb['Carbohidratos totales'])
         var = round(((carb*porciones)/ratio)+((glucosa/factor)-2))
-        if var < 1  : var = 1 
-        setCalculus(var)
+        if var < 1:
+            var = 1
+        setCalculus(f"Te tienes que suministrar: {var} unidades")
+        print(calculus)
 
     return html.div({
         "style": {
-            "background-color": "#B5BAD0",
+            "background-color": "#78D6C6",
             "font-family": "consolas",
         },
     },
         html.div(
             {"style": {
-                 "display": "flex",
-                 "flex-direction": "column",
-                 "justify-content": "center",
-                 "align-items": "center",
-             },
-             },
+                "display": "flex",
+                "flex-direction": "column",
+                "justify-content": "center",
+                "align-items": "center",
+            },
+            },
             label("Nivel de glucosa:"),
             input(addFormState, "glucosa"),
             label("Ratio:"),
             input(addFormState, "ratio"),
-            label("Factor:"),
+            label("Factor de sensibilidad de insulina:"),
             input(addFormState, "factor"),
             label("Cantidad de Porciones:"),
             input(addFormState, "porciones"),
             label("Categoría y Alimento:"),
             foodSelector(addFormState),
-            boton("Calcular", calculate, calculus),
-            html.span({
-                "style":{
-                    "font-size":"24px",
-                    },
-                    },
-                    f"Te tienes que suministrar:{calculus} unidades"
-                )
-            )
+            boton("Calcular", calculate),
+            html.div({"style": {"font-size": "24px", }, }, calculus)
+    )
     )
 
 

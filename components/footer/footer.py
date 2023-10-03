@@ -7,7 +7,7 @@ from fastapi import FastAPI
 def footer():
     return html.footer({
         "style": {
-            "background-color": "#416788",
+            "background-color": "#12486B",
             "color": "#fff",
             "padding": "50px 0",
             "text-align": "center",

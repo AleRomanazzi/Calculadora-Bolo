@@ -9,7 +9,7 @@ from components.navbar.ul_navbar import ul_navbar
 def navbar():
     return html.div({
         "style": {
-            "background-color": "#7389AE",
+            "background-color": "#419197",
             "color": "white",
             "display": "flex",
             "flex-direction": "column",
@@ -17,7 +17,8 @@ def navbar():
             "font-family": "consolas"
         }
     },
-        html.h1("CALCULADORA DE BOLO"),
+        html.h1("DIABCALC"),
+        html.p({"style": {"margin-top": "2px"}}, "Calculadora de insulina"),
         ul_navbar()
     )
 

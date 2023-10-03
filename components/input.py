@@ -17,8 +17,9 @@ def input(cambiar, name):
             "width": "200px",
             "height": "30px",
             "border": "1px solid black",
-            "border-radius": "2px",
-            "font-size": "32px"
+            "border-radius": "10px",
+            "font-size": "24px",
+            "padding": "0.3rem"
         },
     })
 

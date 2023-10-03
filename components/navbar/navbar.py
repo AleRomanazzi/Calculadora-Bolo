@@ -17,8 +17,8 @@ def navbar():
             "font-family": "consolas"
         }
     },
-        html.h1("DIABCALC"),
-        html.p({"style": {"margin-top": "2px"}}, "Calculadora de insulina"),
+        html.h1({"style":{"color": "#F5FCCD"},},"DIABCALC"),
+        html.p({"style": {"margin-top": "2px", "color": "#F5FCCD"},}, "CALCULADORA DE INSULINA"),
         ul_navbar()
     )
 

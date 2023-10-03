@@ -15,7 +15,7 @@ def boton(texto, calcular):
             "padding": "1rem",
             "border-radius": "10%",
             "border": "1px solid white",
-            "background-image": "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)"
+            "background-color": "#419197"
         },
         "on_click": calcular
     },

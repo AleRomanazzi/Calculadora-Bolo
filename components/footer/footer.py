@@ -35,7 +35,7 @@ def footer():
         html.div(
             {
                 "class": "copyright",
-            }, "©Copyright; 2023 Calculadora de Bolo. Todos los derechos reservados."
+            }, "©Copyright; DiabCalc 2023. Todos los derechos reservados."
     ),
 
     )

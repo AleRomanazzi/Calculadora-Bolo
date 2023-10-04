@@ -8,7 +8,6 @@ from fastapi import FastAPI
 def input(cambiar, name):
     def handleChange(e):
         cambiar(name, e["currentTarget"]['value'])
-        print(e["currentTarget"]['value'])
     return html.input({
         "on_change": handleChange,
         "type": "number",

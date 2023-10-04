@@ -1,6 +1,4 @@
-from reactpy import component, html, event
-
-# options = [{label:value}]
+from reactpy import component, html
 
 
 @component

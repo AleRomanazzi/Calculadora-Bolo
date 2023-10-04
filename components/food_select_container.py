@@ -24,7 +24,7 @@ def foodSelector(change):
     },
         select(
             [{"value": label, "label": label} for index, label in enumerate(
-                ['Lácteos', 'Azucarados', 'Carnes', 'Cereales', 'Frutas', 'Grasas', 'Huevo', 'Misceláneos', 'Pescados', 'Vegetales'])],
+                ['Lácteos', 'Azucarados', 'Carnes', 'Cereales', 'Frutas', 'Grasas', 'Huevo', 'Misceláneas', 'Pescados', 'Vegetales'])],
         handleCategoryChange, "categories"),
         select(
             [{"value": label, "label": label} for index, label in enumerate(foodlist)], change, "alimentos"))

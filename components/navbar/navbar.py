@@ -14,11 +14,11 @@ def navbar():
             "display": "flex",
             "flex-direction": "column",
             "align-items": "center",
-            "font-family": "consolas"
+            "font-family": "verdana"
         }
     },
-        html.h1("DIABCALC"),
-        html.p({"style": {"margin-top": "2px"}}, "Calculadora de insulina"),
+        html.h1({"style":{"color": "#F5FCCD"},},"DIABCALC"),
+        html.p({"style": {"margin-top": "2px", "color": "#F5FCCD"},}, "CALCULADORA DE INSULINA"),
         ul_navbar()
     )
 

@@ -35,15 +35,18 @@ def body():
         carb = db[categoria].find_one({"Nombre": nombre_alimento})
         carb = float(carb['Carbohidratos totales'])
         var = round(((carb*porciones)/ratio)+((glucosa - 150)/factor))
+        texto = "unidades"
         if var < 1:
             var = 1
-        setCalculus(f"Te tienes que suministrar: {var} unidades")
+            texto = "unidad"
+        
+        setCalculus(f"Te tienes que suministrar: {var} {texto}")
 
     # * mostrar el cuerpo de la función
     return html.div({
         "style": {
             "background-color": "#78D6C6",
-            "font-family": "consolas",
+            "font-family": "verdana",
         },
     },
         html.div(
@@ -65,7 +68,8 @@ def body():
             label("Categoría y Alimento:"),
             foodSelector(addFormState),
             boton("Calcular", calculate),
-            html.div({"style": {"font-size": "24px", }, }, calculus)
+            html.div({"style": {"font-size": "24px"
+                                ,"margin": "1rem 0 2rem 0" }, }, calculus)
     )
     )
 

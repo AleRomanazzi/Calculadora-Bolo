@@ -11,7 +11,7 @@ def footer():
             "color": "#fff",
             "padding": "50px 0",
             "text-align": "center",
-            "font-family": "consolas",
+            "font-family": "Arial",
         },
     },
         html.div(

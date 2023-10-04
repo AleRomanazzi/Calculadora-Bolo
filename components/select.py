@@ -1,6 +1,4 @@
-from reactpy import component, html, event
-
-# options = [{label:value}]
+from reactpy import component, html
 
 
 @component
@@ -19,6 +17,6 @@ def select(options, change, name):
             "padding": "0.4rem",
             "font-size": "18px",
             "margin-top": "10px",
-            "font-family": "consolas",
+            "font-family": "verdana",
         },
     }, list_options)

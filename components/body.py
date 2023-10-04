@@ -11,9 +11,8 @@ from mongoPython.conection import db
 @component
 def body():
     formstate, set_formstate = use_state(dict())
-    # *crear la funcion calcular, usando el estado formstate
-    # print(formstate)
 
+    # * capta el conjunto de datos de control en un diccionario (función principal)
     def addFormState(name, value):
         prev_dict = formstate.copy()
         new_dict = dict()
@@ -21,8 +20,11 @@ def body():
         prev_dict.update(new_dict)
         set_formstate(prev_dict)
 
+    # crear el estado que almacenará el cálculo
     calculus, setCalculus = use_state("")
 
+    # captar la coleccion de datos del estado actual 1 por 1,
+    # obtener carbohidratos por nombre y calcular
     def calculate(e):
         glucosa = int(formstate['glucosa'])
         ratio = int(formstate['ratio'])
@@ -32,16 +34,19 @@ def body():
         categoria = formstate['categoria']
         carb = db[categoria].find_one({"Nombre": nombre_alimento})
         carb = float(carb['Carbohidratos totales'])
-        var = round(((carb*porciones)/ratio)+((glucosa/factor)-2))
+        var = round(((carb*porciones)/ratio)+((glucosa - 150)/factor))
+        texto = "unidades"
         if var < 1:
             var = 1
-        setCalculus(f"Te tienes que suministrar: {var} unidades")
-        print(calculus)
+            texto = "unidad"
+        
+        setCalculus(f"Te tienes que suministrar: {var} {texto}")
 
+    # * mostrar el cuerpo de la función
     return html.div({
         "style": {
             "background-color": "#78D6C6",
-            "font-family": "consolas",
+            "font-family": "verdana",
         },
     },
         html.div(
@@ -63,7 +68,8 @@ def body():
             label("Categoría y Alimento:"),
             foodSelector(addFormState),
             boton("Calcular", calculate),
-            html.div({"style": {"font-size": "24px", }, }, calculus)
+            html.div({"style": {"font-size": "24px"
+                                ,"margin": "1rem 0 2rem 0" }, }, calculus)
     )
     )
 

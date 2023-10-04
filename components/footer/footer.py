@@ -11,7 +11,7 @@ def footer():
             "color": "#fff",
             "padding": "50px 0",
             "text-align": "center",
-            "font-family": "consolas",
+            "font-family": "Arial",
         },
     },
         html.div(
@@ -35,7 +35,7 @@ def footer():
         html.div(
             {
                 "class": "copyright",
-            }, "©Copyright; 2023 Calculadora de Bolo. Todos los derechos reservados."
+            }, "©Copyright; DiabCalc 2023. Todos los derechos reservados."
     ),
 
     )

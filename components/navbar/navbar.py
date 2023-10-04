@@ -14,7 +14,7 @@ def navbar():
             "display": "flex",
             "flex-direction": "column",
             "align-items": "center",
-            "font-family": "consolas"
+            "font-family": "verdana"
         }
     },
         html.h1({"style":{"color": "#F5FCCD"},},"DIABCALC"),
